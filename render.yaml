@@ -1,0 +1,24 @@
+cat <<EOF > render.yaml
+services:
+  - type: web
+    name: django-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn myproject.wsgi
+    plan: free
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
+      - key: ALLOWED_HOSTS
+        value: your-backend.onrender.com
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pg-db
+          property: connectionString
+
+databases:
+  - name: pg-db
+    plan: free
+EOF
