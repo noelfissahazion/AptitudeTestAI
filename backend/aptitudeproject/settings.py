@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-dc3kko(tyzpb)q)9h2io9iwf#r8c!+%b1_rcbq%37ji%vctj$a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://aptitudetestai.onrender.com"]
+ALLOWED_HOSTS = ["aptitudetestai.onrender.com"]
 
 
 # Application definition
@@ -63,12 +63,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'myproject.wsgi.application'
+WSGI_APPLICATION = 'aptitudeproject.wsgi.application'
 
 
 # Database
